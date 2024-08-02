@@ -1,0 +1,1057 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.10.2 on darwin)" generated="20240802 23:45:17.940" rpa="false" schemaversion="3">
+<suite id="s1" name="Technical Test Alfatech Omega" source="/Users/atmakaragil/Documents/Ragil/Technical Testing/Technical Test Alfatech Omega">
+<suite id="s1-s1" name="Test" source="/Users/atmakaragil/Documents/Ragil/Technical Testing/Technical Test Alfatech Omega/test">
+<suite id="s1-s1-s1" name="00 Add To Cart" source="/Users/atmakaragil/Documents/Ragil/Technical Testing/Technical Test Alfatech Omega/test/00_add_to_cart.robot">
+<test id="s1-s1-s1-t1" name="Guest Add To Cart" line="14">
+<kw name="Start Test Case" library="setup" type="SETUP">
+<kw name="Evaluate" library="BuiltIn">
+<var>${OS}</var>
+<arg>platform.system()</arg>
+<arg>platform</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240802 23:45:18.137" level="INFO">${OS} = Darwin</msg>
+<status status="PASS" starttime="20240802 23:45:18.136" endtime="20240802 23:45:18.137"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>"running on ${OS}-${BROWSER}"</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240802 23:45:18.137" level="INFO">"running on Darwin-Chrome"</msg>
+<status status="PASS" starttime="20240802 23:45:18.137" endtime="20240802 23:45:18.137"/>
+</kw>
+<kw name="Get Browser Ids" library="SeleniumLibrary">
+<var>@{Browser_id}</var>
+<doc>Returns index of all active browser as list.</doc>
+<msg timestamp="20240802 23:45:18.138" level="INFO">@{Browser_id} = [ ]</msg>
+<status status="PASS" starttime="20240802 23:45:18.137" endtime="20240802 23:45:18.138"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>@{Browser_id}==[]</arg>
+<arg>Start Test</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Start Test" library="setup">
+<kw name="Evaluate" library="BuiltIn">
+<var>${OS}</var>
+<arg>platform.system()</arg>
+<arg>platform</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240802 23:45:18.139" level="INFO">${OS} = Darwin</msg>
+<status status="PASS" starttime="20240802 23:45:18.139" endtime="20240802 23:45:18.139"/>
+</kw>
+<if>
+<branch type="IF" condition="'${OS}'==&quot;Linux&quot;">
+<if>
+<branch type="IF" condition="'${BROWSER}'=='Chrome'">
+<kw name="Log To Console" library="BuiltIn">
+<arg>"running on Linux - Chrome"</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240802 23:45:18.139" endtime="20240802 23:45:18.140"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${BrowserConfiguration}</var>
+<arg>chrome_options</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20240802 23:45:18.140" endtime="20240802 23:45:18.140"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${ExecutablePath}</var>
+<arg>${CromeDriverPath}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20240802 23:45:18.140" endtime="20240802 23:45:18.140"/>
+</kw>
+<kw name="Setup Browser Option Configuration" library="setup">
+<arg>${BrowserConfiguration}</arg>
+<arg>${ExecutablePath}</arg>
+<status status="NOT RUN" starttime="20240802 23:45:18.140" endtime="20240802 23:45:18.140"/>
+</kw>
+<status status="NOT RUN" starttime="20240802 23:45:18.139" endtime="20240802 23:45:18.140"/>
+</branch>
+<branch type="ELSE IF" condition="'${BROWSER}'=='Edge'">
+<kw name="Log To Console" library="BuiltIn">
+<arg>"running on Linux - Edge"</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240802 23:45:18.141" endtime="20240802 23:45:18.141"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${BrowserConfiguration}</var>
+<arg>options</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20240802 23:45:18.141" endtime="20240802 23:45:18.141"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${ExecutablePath}</var>
+<arg>${EdgeDriverPath}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20240802 23:45:18.141" endtime="20240802 23:45:18.141"/>
+</kw>
+<kw name="Setup Browser Option Configuration" library="setup">
+<arg>${BrowserConfiguration}</arg>
+<arg>${ExecutablePath}</arg>
+<status status="NOT RUN" starttime="20240802 23:45:18.141" endtime="20240802 23:45:18.141"/>
+</kw>
+<status status="NOT RUN" starttime="20240802 23:45:18.140" endtime="20240802 23:45:18.141"/>
+</branch>
+<status status="NOT RUN" starttime="20240802 23:45:18.139" endtime="20240802 23:45:18.142"/>
+</if>
+<status status="NOT RUN" starttime="20240802 23:45:18.139" endtime="20240802 23:45:18.142"/>
+</branch>
+<branch type="ELSE IF" condition="'${OS}'==&quot;Windows&quot;">
+<if>
+<branch type="IF" condition="'${BROWSER}'=='Chrome'">
+<kw name="Log To Console" library="BuiltIn">
+<arg>"running on Windows - Chrome"</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240802 23:45:18.142" endtime="20240802 23:45:18.142"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${BrowserConfiguration}</var>
+<arg>chrome_options</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20240802 23:45:18.142" endtime="20240802 23:45:18.142"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${ExecutablePath}</var>
+<arg>${CromeDriverPath}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20240802 23:45:18.142" endtime="20240802 23:45:18.142"/>
+</kw>
+<kw name="Setup Browser Option Configuration" library="setup">
+<arg>${BrowserConfiguration}</arg>
+<arg>${ExecutablePath}</arg>
+<status status="NOT RUN" starttime="20240802 23:45:18.143" endtime="20240802 23:45:18.143"/>
+</kw>
+<status status="NOT RUN" starttime="20240802 23:45:18.142" endtime="20240802 23:45:18.143"/>
+</branch>
+<branch type="ELSE IF" condition="'${BROWSER}'=='Edge'">
+<kw name="Log To Console" library="BuiltIn">
+<arg>"running on Windows - Edge"</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240802 23:45:18.143" endtime="20240802 23:45:18.143"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${BrowserConfiguration}</var>
+<arg>options</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20240802 23:45:18.143" endtime="20240802 23:45:18.143"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${ExecutablePath}</var>
+<arg>${EdgeDriverPath}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20240802 23:45:18.143" endtime="20240802 23:45:18.144"/>
+</kw>
+<kw name="Setup Browser Option Configuration" library="setup">
+<arg>${BrowserConfiguration}</arg>
+<arg>${ExecutablePath}</arg>
+<status status="NOT RUN" starttime="20240802 23:45:18.144" endtime="20240802 23:45:18.144"/>
+</kw>
+<status status="NOT RUN" starttime="20240802 23:45:18.143" endtime="20240802 23:45:18.144"/>
+</branch>
+<status status="NOT RUN" starttime="20240802 23:45:18.142" endtime="20240802 23:45:18.144"/>
+</if>
+<status status="NOT RUN" starttime="20240802 23:45:18.142" endtime="20240802 23:45:18.144"/>
+</branch>
+<branch type="ELSE IF" condition="'${OS}'==&quot;Darwin&quot;">
+<if>
+<branch type="IF" condition="'${BROWSER}'=='Chrome'">
+<kw name="Log To Console" library="BuiltIn">
+<arg>"running on MacOS - Chrome"</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240802 23:45:18.144" endtime="20240802 23:45:18.145"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${BrowserConfiguration}</var>
+<arg>chrome_options</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240802 23:45:18.145" level="INFO">${BrowserConfiguration} = chrome_options</msg>
+<status status="PASS" starttime="20240802 23:45:18.145" endtime="20240802 23:45:18.145"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${ExecutablePath}</var>
+<arg>${CromeDriverPath}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240802 23:45:18.146" level="INFO">${ExecutablePath} = /Users/atmakaragil/Documents/Ragil/Technical Testing/Technical Test Alfatech Omega/base/../../chromedriver/chromedriver</msg>
+<status status="PASS" starttime="20240802 23:45:18.146" endtime="20240802 23:45:18.146"/>
+</kw>
+<kw name="Setup Browser Option Configuration" library="setup">
+<arg>${BrowserConfiguration}</arg>
+<arg>${ExecutablePath}</arg>
+<kw name="Evaluate" library="BuiltIn">
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].${BROWSER}Options()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240802 23:45:18.147" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x107015000&gt;</msg>
+<status status="PASS" starttime="20240802 23:45:18.147" endtime="20240802 23:45:18.147"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240802 23:45:18.147" endtime="20240802 23:45:18.148"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240802 23:45:18.148" endtime="20240802 23:45:18.148"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>window-size\=1920,1080</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240802 23:45:18.148" endtime="20240802 23:45:18.148"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${options.prefs}</var>
+<arg>profile.default_content_setting_values.geolocation</arg>
+<arg>1</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20240802 23:45:18.149" level="INFO">${options.prefs} = {'profile.default_content_setting_values.geolocation': '1'}</msg>
+<status status="PASS" starttime="20240802 23:45:18.149" endtime="20240802 23:45:18.149"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${options}</arg>
+<arg>add_experimental_option</arg>
+<arg>prefs</arg>
+<arg>${options.prefs}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240802 23:45:18.149" endtime="20240802 23:45:18.150"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>${BROWSER}</arg>
+<arg>${BrowserConfiguration}=${options}</arg>
+<arg>executable_path=${ExecutablePath}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20240802 23:45:18.151" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20240802 23:45:18.150" endtime="20240802 23:45:20.242"/>
+</kw>
+<status status="PASS" starttime="20240802 23:45:18.146" endtime="20240802 23:45:20.243"/>
+</kw>
+<status status="PASS" starttime="20240802 23:45:18.144" endtime="20240802 23:45:20.243"/>
+</branch>
+<branch type="ELSE IF" condition="'${BROWSER}'=='Edge'">
+<kw name="Log To Console" library="BuiltIn">
+<arg>"running on MacOS - Edge"</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240802 23:45:20.244" endtime="20240802 23:45:20.245"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${BrowserConfiguration}</var>
+<arg>options</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20240802 23:45:20.245" endtime="20240802 23:45:20.246"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${ExecutablePath}</var>
+<arg>${EdgeDriverPath}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20240802 23:45:20.246" endtime="20240802 23:45:20.246"/>
+</kw>
+<kw name="Setup Browser Option Configuration" library="setup">
+<arg>${BrowserConfiguration}</arg>
+<arg>${ExecutablePath}</arg>
+<status status="NOT RUN" starttime="20240802 23:45:20.247" endtime="20240802 23:45:20.247"/>
+</kw>
+<status status="NOT RUN" starttime="20240802 23:45:20.244" endtime="20240802 23:45:20.248"/>
+</branch>
+<branch type="ELSE IF" condition="'${BROWSER}'=='Safari'">
+<kw name="Log To Console" library="BuiltIn">
+<arg>"running on MacOS - Safari"</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240802 23:45:20.249" endtime="20240802 23:45:20.249"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${BrowserConfiguration}</var>
+<arg>options</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20240802 23:45:20.250" endtime="20240802 23:45:20.251"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>${BROWSER}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="NOT RUN" starttime="20240802 23:45:20.251" endtime="20240802 23:45:20.251"/>
+</kw>
+<status status="NOT RUN" starttime="20240802 23:45:20.248" endtime="20240802 23:45:20.251"/>
+</branch>
+<status status="PASS" starttime="20240802 23:45:18.144" endtime="20240802 23:45:20.251"/>
+</if>
+<status status="PASS" starttime="20240802 23:45:18.144" endtime="20240802 23:45:20.252"/>
+</branch>
+<status status="PASS" starttime="20240802 23:45:18.139" endtime="20240802 23:45:20.252"/>
+</if>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20240802 23:45:20.252" endtime="20240802 23:45:20.289"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${URLWEB}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240802 23:45:20.291" level="INFO">Opening url 'https://sesa.id/'</msg>
+<status status="PASS" starttime="20240802 23:45:20.290" endtime="20240802 23:45:28.259"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.body.style.zoom = "100%"</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20240802 23:45:28.267" level="INFO">Executing JavaScript:
+document.body.style.zoom = "100%"
+Without any arguments.</msg>
+<status status="PASS" starttime="20240802 23:45:28.262" endtime="20240802 23:45:28.285"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>1</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20240802 23:45:28.286" endtime="20240802 23:45:28.287"/>
+</kw>
+<status status="PASS" starttime="20240802 23:45:18.138" endtime="20240802 23:45:28.288"/>
+</kw>
+<status status="PASS" starttime="20240802 23:45:18.138" endtime="20240802 23:45:28.289"/>
+</kw>
+<status status="PASS" starttime="20240802 23:45:18.136" endtime="20240802 23:45:28.290"/>
+</kw>
+<kw name="Empty the items in MiniCart" library="add_to_cart">
+<kw name="Go To Home Page" library="base">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${URLWEB}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240802 23:45:28.296" level="INFO">Opening url 'https://sesa.id/'</msg>
+<status status="PASS" starttime="20240802 23:45:28.294" endtime="20240802 23:45:30.792"/>
+</kw>
+<status status="PASS" starttime="20240802 23:45:28.293" endtime="20240802 23:45:30.792"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SESAMinicart}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240802 23:45:30.794" level="INFO">Clicking element '//span[@class='current-cart-icon current-cart-icon--cart']'.</msg>
+<status status="PASS" starttime="20240802 23:45:30.793" endtime="20240802 23:45:32.966"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${present}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>${SESADeleteItemMiniCart}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${SESADeleteItemMiniCart}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<msg timestamp="20240802 23:45:41.116" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20240802 23:45:41.119" level="FAIL">Element '//a[normalize-space()='Hapus']' did not appear in 5 seconds.</msg>
+<status status="FAIL" starttime="20240802 23:45:32.968" endtime="20240802 23:45:41.125"/>
+</kw>
+<msg timestamp="20240802 23:45:41.125" level="INFO">${present} = False</msg>
+<status status="PASS" starttime="20240802 23:45:32.967" endtime="20240802 23:45:41.126"/>
+</kw>
+<while condition="${present}">
+<iter>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SESADeleteItemMiniCart}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240802 23:45:41.128" endtime="20240802 23:45:41.128"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<arg>${Loader}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="NOT RUN" starttime="20240802 23:45:41.129" endtime="20240802 23:45:41.129"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${present}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>${SESADeleteItemMiniCart}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="NOT RUN" starttime="20240802 23:45:41.129" endtime="20240802 23:45:41.130"/>
+</kw>
+<status status="NOT RUN" starttime="20240802 23:45:41.127" endtime="20240802 23:45:41.130"/>
+</iter>
+<status status="NOT RUN" starttime="20240802 23:45:41.126" endtime="20240802 23:45:41.130"/>
+</while>
+<kw name="Close The Minicart" library="add_to_cart">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SESACloseMiniCart}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240802 23:45:41.131" endtime="20240802 23:45:43.184"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SESACloseMiniCart}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240802 23:45:43.185" level="INFO">Clicking element '//a[@class='cart-summary__close toggle-cart-summary']'.</msg>
+<status status="PASS" starttime="20240802 23:45:43.184" endtime="20240802 23:45:45.330"/>
+</kw>
+<status status="PASS" starttime="20240802 23:45:41.130" endtime="20240802 23:45:45.331"/>
+</kw>
+<kw name="Go To Home Page" library="base">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${URLWEB}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240802 23:45:45.332" level="INFO">Opening url 'https://sesa.id/'</msg>
+<status status="PASS" starttime="20240802 23:45:45.332" endtime="20240802 23:45:49.039"/>
+</kw>
+<status status="PASS" starttime="20240802 23:45:45.331" endtime="20240802 23:45:49.042"/>
+</kw>
+<status status="PASS" starttime="20240802 23:45:28.292" endtime="20240802 23:45:49.043"/>
+</kw>
+<kw name="Search Product by Keyword in Searchbox" library="add_to_cart">
+<arg>${SESASimpleProduk}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SESASearchIcon}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240802 23:45:49.050" level="INFO">Clicking element '//a[@aria-label='Cari']//*[name()='svg']'.</msg>
+<status status="PASS" starttime="20240802 23:45:49.049" endtime="20240802 23:45:51.321"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SESASearchBox}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240802 23:45:51.324" level="INFO">Clicking element '//input[@id='boost-pfs-search-box-0']'.</msg>
+<status status="PASS" starttime="20240802 23:45:51.322" endtime="20240802 23:45:53.427"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SESASearchBox}</arg>
+<arg>${keyword}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240802 23:45:53.429" level="INFO">Typing text 'Fitbar Cheese Delight 20 Gr' into text field '//input[@id='boost-pfs-search-box-0']'.</msg>
+<status status="PASS" starttime="20240802 23:45:53.428" endtime="20240802 23:45:56.848"/>
+</kw>
+<kw name="Wait Until Element Is Visible With Long Time" library="base">
+<arg>${SESASugestedProduct}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Element}</arg>
+<arg>45</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240802 23:45:56.850" endtime="20240802 23:46:00.109"/>
+</kw>
+<status status="PASS" starttime="20240802 23:45:56.849" endtime="20240802 23:46:00.110"/>
+</kw>
+<kw name="Search Product Suggestion Validation" library="add_to_cart">
+<arg>${keyword}</arg>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${txtProductSuggestion}</var>
+<arg>${SESASugestedProduct}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240802 23:46:02.144" level="INFO">${txtProductSuggestion} = Fitbar Cheese Delight 20 Gr</msg>
+<status status="PASS" starttime="20240802 23:46:00.111" endtime="20240802 23:46:02.144"/>
+</kw>
+<kw name="Convert To Lower Case" library="String">
+<var>${keyword}</var>
+<arg>${keyword}</arg>
+<doc>Converts string to lower case.</doc>
+<msg timestamp="20240802 23:46:02.145" level="INFO">${keyword} = fitbar cheese delight 20 gr</msg>
+<status status="PASS" starttime="20240802 23:46:02.144" endtime="20240802 23:46:02.145"/>
+</kw>
+<kw name="Convert To Lower Case" library="String">
+<var>${txtProductSuggestion}</var>
+<arg>${txtProductSuggestion}</arg>
+<doc>Converts string to lower case.</doc>
+<msg timestamp="20240802 23:46:02.145" level="INFO">${txtProductSuggestion} = fitbar cheese delight 20 gr</msg>
+<status status="PASS" starttime="20240802 23:46:02.145" endtime="20240802 23:46:02.146"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${validasiProduct_name}</var>
+<arg>Should Contain</arg>
+<arg>${txtProductSuggestion}</arg>
+<arg>${keyword}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${txtProductSuggestion}</arg>
+<arg>${keyword}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240802 23:46:02.146" endtime="20240802 23:46:02.147"/>
+</kw>
+<msg timestamp="20240802 23:46:02.147" level="INFO">${validasiProduct_name} = True</msg>
+<status status="PASS" starttime="20240802 23:46:02.146" endtime="20240802 23:46:02.147"/>
+</kw>
+<if>
+<branch type="IF" condition="'${validasiProduct_name}'=='False'">
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Search Product Not Match</arg>
+<arg>${keyword}</arg>
+<arg>${txtProductSuggestion}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="NOT RUN" starttime="20240802 23:46:02.148" endtime="20240802 23:46:02.148"/>
+</kw>
+<status status="NOT RUN" starttime="20240802 23:46:02.147" endtime="20240802 23:46:02.148"/>
+</branch>
+<status status="PASS" starttime="20240802 23:46:02.147" endtime="20240802 23:46:02.148"/>
+</if>
+<status status="PASS" starttime="20240802 23:46:00.110" endtime="20240802 23:46:02.148"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SESASugestedProduct}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240802 23:46:02.149" level="INFO">Clicking element '//p[@class='boost-pfs-search-suggestion-product-title']'.</msg>
+<status status="PASS" starttime="20240802 23:46:02.149" endtime="20240802 23:46:06.471"/>
+</kw>
+<status status="PASS" starttime="20240802 23:45:49.045" endtime="20240802 23:46:06.473"/>
+</kw>
+<kw name="Validate Search Product And Go To PDP" library="add_to_cart">
+<arg>${SESASimpleProduk}</arg>
+<kw name="Search Product result Validation" library="add_to_cart">
+<arg>${keyword}</arg>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${ShowPDP}</var>
+<arg>Wait Until Element Is Visible in 10s</arg>
+<arg>${SESAPDPProductName}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Wait Until Element Is Visible in 10s" library="base">
+<arg>${SESAPDPProductName}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Element}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240802 23:46:06.480" endtime="20240802 23:46:08.556"/>
+</kw>
+<status status="PASS" starttime="20240802 23:46:06.479" endtime="20240802 23:46:08.557"/>
+</kw>
+<msg timestamp="20240802 23:46:08.557" level="INFO">${ShowPDP} = True</msg>
+<status status="PASS" starttime="20240802 23:46:06.478" endtime="20240802 23:46:08.558"/>
+</kw>
+<kw name="Convert To Lower Case" library="String">
+<var>${keyword}</var>
+<arg>${keyword}</arg>
+<doc>Converts string to lower case.</doc>
+<msg timestamp="20240802 23:46:08.559" level="INFO">${keyword} = fitbar cheese delight 20 gr</msg>
+<status status="PASS" starttime="20240802 23:46:08.558" endtime="20240802 23:46:08.559"/>
+</kw>
+<if>
+<branch type="IF" condition="${ShowPDP}">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SESAPDPProductName}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240802 23:46:08.559" endtime="20240802 23:46:10.585"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${txtProductresult}</var>
+<arg>${SESAPDPProductName}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240802 23:46:12.612" level="INFO">${txtProductresult} = Fitbar Cheese Delight 20 Gr</msg>
+<status status="PASS" starttime="20240802 23:46:10.585" endtime="20240802 23:46:12.612"/>
+</kw>
+<kw name="Convert To Lower Case" library="String">
+<var>${txtProductresult}</var>
+<arg>${txtProductresult}</arg>
+<doc>Converts string to lower case.</doc>
+<msg timestamp="20240802 23:46:12.613" level="INFO">${txtProductresult} = fitbar cheese delight 20 gr</msg>
+<status status="PASS" starttime="20240802 23:46:12.612" endtime="20240802 23:46:12.613"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${validasiProduct_name}</var>
+<arg>Should Contain</arg>
+<arg>${txtProductresult}</arg>
+<arg>${keyword}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${txtProductresult}</arg>
+<arg>${keyword}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240802 23:46:12.613" endtime="20240802 23:46:12.614"/>
+</kw>
+<msg timestamp="20240802 23:46:12.614" level="INFO">${validasiProduct_name} = True</msg>
+<status status="PASS" starttime="20240802 23:46:12.613" endtime="20240802 23:46:12.614"/>
+</kw>
+<if>
+<branch type="IF" condition="'${validasiProduct_name}'=='False'">
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Search Product Not Match</arg>
+<arg>${keyword}</arg>
+<arg>${txtProductresult}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="NOT RUN" starttime="20240802 23:46:12.615" endtime="20240802 23:46:12.615"/>
+</kw>
+<status status="NOT RUN" starttime="20240802 23:46:12.614" endtime="20240802 23:46:12.615"/>
+</branch>
+<status status="PASS" starttime="20240802 23:46:12.614" endtime="20240802 23:46:12.615"/>
+</if>
+<status status="PASS" starttime="20240802 23:46:08.559" endtime="20240802 23:46:12.615"/>
+</branch>
+<branch type="ELSE">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${txtProductresult}</var>
+<arg>${SESAProductItemCartName.format(1)}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240802 23:46:12.616" endtime="20240802 23:46:12.616"/>
+</kw>
+<kw name="Convert To Lower Case" library="String">
+<var>${txtProductresult}</var>
+<arg>${txtProductresult}</arg>
+<doc>Converts string to lower case.</doc>
+<status status="NOT RUN" starttime="20240802 23:46:12.616" endtime="20240802 23:46:12.616"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${validasiProduct_name}</var>
+<arg>Should Contain</arg>
+<arg>${txtProductresult}</arg>
+<arg>${keyword}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="NOT RUN" starttime="20240802 23:46:12.616" endtime="20240802 23:46:12.617"/>
+</kw>
+<if>
+<branch type="IF" condition="'${validasiProduct_name}'=='False'">
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Search Product Not Match</arg>
+<arg>${keyword}</arg>
+<arg>${txtProductresult}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="NOT RUN" starttime="20240802 23:46:12.617" endtime="20240802 23:46:12.617"/>
+</kw>
+<status status="NOT RUN" starttime="20240802 23:46:12.617" endtime="20240802 23:46:12.617"/>
+</branch>
+<status status="NOT RUN" starttime="20240802 23:46:12.617" endtime="20240802 23:46:12.617"/>
+</if>
+<status status="NOT RUN" starttime="20240802 23:46:12.616" endtime="20240802 23:46:12.617"/>
+</branch>
+<status status="PASS" starttime="20240802 23:46:08.559" endtime="20240802 23:46:12.617"/>
+</if>
+<status status="PASS" starttime="20240802 23:46:06.477" endtime="20240802 23:46:12.617"/>
+</kw>
+<kw name="Check If On Product Detail Page" library="add_to_cart">
+<var>${IsOnProductDetailPage}</var>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${IsOnProductDetailPage}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${SESAPDPProductName}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${SESAPDPProductName}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20240802 23:46:14.640" level="INFO">Element '//h1[normalize-space()='Fitbar Cheese Delight 20 Gr']' is displayed.</msg>
+<status status="PASS" starttime="20240802 23:46:12.618" endtime="20240802 23:46:14.640"/>
+</kw>
+<msg timestamp="20240802 23:46:14.641" level="INFO">${IsOnProductDetailPage} = True</msg>
+<status status="PASS" starttime="20240802 23:46:12.618" endtime="20240802 23:46:14.641"/>
+</kw>
+<return>
+<value>${IsOnProductDetailPage}</value>
+<status status="PASS" starttime="20240802 23:46:14.641" endtime="20240802 23:46:14.642"/>
+</return>
+<msg timestamp="20240802 23:46:14.642" level="INFO">${IsOnProductDetailPage} = True</msg>
+<status status="PASS" starttime="20240802 23:46:12.617" endtime="20240802 23:46:14.642"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${IsOnProductDetailPage}">
+<kw name="Go To PDP Product By Index" library="add_to_cart">
+<arg>1</arg>
+<status status="NOT RUN" starttime="20240802 23:46:14.643" endtime="20240802 23:46:14.643"/>
+</kw>
+<status status="NOT RUN" starttime="20240802 23:46:14.643" endtime="20240802 23:46:14.643"/>
+</branch>
+<status status="PASS" starttime="20240802 23:46:14.643" endtime="20240802 23:46:14.643"/>
+</if>
+<status status="PASS" starttime="20240802 23:46:06.474" endtime="20240802 23:46:14.643"/>
+</kw>
+<kw name="Add To Cart" library="add_to_cart">
+<var>@{productName}</var>
+<arg>Qty=1</arg>
+<kw name="Get Product Name From PDP" library="add_to_cart">
+<var>${SESAPDPProductName}</var>
+<kw name="Wait Until Element Is Visible With Long Time" library="base">
+<arg>${SESAPDPProductName}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Element}</arg>
+<arg>45</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240802 23:46:14.646" endtime="20240802 23:46:16.665"/>
+</kw>
+<status status="PASS" starttime="20240802 23:46:14.645" endtime="20240802 23:46:16.666"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${PDPProductNameValue}</var>
+<arg>${SESAPDPProductName}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240802 23:46:18.692" level="INFO">${PDPProductNameValue} = Fitbar Cheese Delight 20 Gr</msg>
+<status status="PASS" starttime="20240802 23:46:16.667" endtime="20240802 23:46:18.692"/>
+</kw>
+<return>
+<value>${PDPProductNameValue}</value>
+<status status="PASS" starttime="20240802 23:46:18.692" endtime="20240802 23:46:18.693"/>
+</return>
+<msg timestamp="20240802 23:46:18.693" level="INFO">${SESAPDPProductName} = Fitbar Cheese Delight 20 Gr</msg>
+<status status="PASS" starttime="20240802 23:46:14.645" endtime="20240802 23:46:18.693"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>${ProductNameList}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20240802 23:46:18.694" level="INFO">${ProductNameList} = []</msg>
+<status status="PASS" starttime="20240802 23:46:18.694" endtime="20240802 23:46:18.694"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${ProductNameList}</arg>
+<arg>${SESAPDPProductName}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240802 23:46:18.695" endtime="20240802 23:46:18.695"/>
+</kw>
+<kw name="Scroll Down To Element" library="base">
+<arg>${SESAAddKeranjang}</arg>
+<kw name="Get Horizontal Position" library="SeleniumLibrary">
+<var>${x}</var>
+<arg>${locator}</arg>
+<doc>Returns the horizontal position of the element identified by ``locator``.</doc>
+<msg timestamp="20240802 23:46:20.722" level="INFO">${x} = 740</msg>
+<status status="PASS" starttime="20240802 23:46:18.696" endtime="20240802 23:46:20.723"/>
+</kw>
+<kw name="Get Vertical Position" library="SeleniumLibrary">
+<var>${y}</var>
+<arg>${locator}</arg>
+<doc>Returns the vertical position of the element identified by ``locator``.</doc>
+<msg timestamp="20240802 23:46:22.750" level="INFO">${y} = 430</msg>
+<status status="PASS" starttime="20240802 23:46:20.723" endtime="20240802 23:46:22.751"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(${x}, ${y}-100)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20240802 23:46:22.752" level="INFO">Executing JavaScript:
+window.scrollTo(740, 430-100)
+Without any arguments.</msg>
+<status status="PASS" starttime="20240802 23:46:22.751" endtime="20240802 23:46:23.762"/>
+</kw>
+<status status="PASS" starttime="20240802 23:46:18.695" endtime="20240802 23:46:23.762"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SESAAddKeranjang}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240802 23:46:23.763" level="INFO">Clicking element '//button[@class='btn product-add mini-form']'.</msg>
+<status status="PASS" starttime="20240802 23:46:23.762" endtime="20240802 23:46:25.880"/>
+</kw>
+<return>
+<value>${ProductNameList}</value>
+<status status="PASS" starttime="20240802 23:46:25.881" endtime="20240802 23:46:25.881"/>
+</return>
+<msg timestamp="20240802 23:46:25.881" level="INFO">@{productName} = [ Fitbar Cheese Delight 20 Gr ]</msg>
+<status status="PASS" starttime="20240802 23:46:14.644" endtime="20240802 23:46:25.882"/>
+</kw>
+<kw name="Open MiniCart" library="add_to_cart">
+<kw name="Wait Until Element Is Visible With Long Time" library="base">
+<arg>${SESAMinicart}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Element}</arg>
+<arg>45</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<msg timestamp="20240802 23:46:26.910" level="INFO">Suppressing StaleElementReferenceException from Selenium.</msg>
+<status status="PASS" starttime="20240802 23:46:25.883" endtime="20240802 23:46:29.139"/>
+</kw>
+<status status="PASS" starttime="20240802 23:46:25.883" endtime="20240802 23:46:29.140"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SESAMinicart}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240802 23:46:29.141" level="INFO">Clicking element '//span[@class='current-cart-icon current-cart-icon--cart']'.</msg>
+<status status="PASS" starttime="20240802 23:46:29.140" endtime="20240802 23:46:31.218"/>
+</kw>
+<status status="PASS" starttime="20240802 23:46:25.882" endtime="20240802 23:46:31.219"/>
+</kw>
+<kw name="Get Product Name From Minicart" library="add_to_cart">
+<var>@{MinicartProductNameValue}</var>
+<kw name="Wait Until Element Is Visible With Long Time" library="base">
+<arg>${SESAProductItemCartName}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Element}</arg>
+<arg>45</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240802 23:46:31.220" endtime="20240802 23:46:33.247"/>
+</kw>
+<status status="PASS" starttime="20240802 23:46:31.219" endtime="20240802 23:46:33.247"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${totalItem}</var>
+<arg>${SESAProductItemCartName}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20240802 23:46:34.264" level="INFO">${totalItem} = 1</msg>
+<status status="PASS" starttime="20240802 23:46:33.248" endtime="20240802 23:46:34.265"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>${MiniCartItemList}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20240802 23:46:34.267" level="INFO">${MiniCartItemList} = []</msg>
+<status status="PASS" starttime="20240802 23:46:34.266" endtime="20240802 23:46:34.267"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${Item}</var>
+<value>1</value>
+<value>${totalItem+1}</value>
+<iter>
+<var name="${Item}">1</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${MinicartItemName}</var>
+<arg>${SESAProductItemCartName.format(${Item})}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240802 23:46:36.302" level="INFO">${MinicartItemName} = Fitbar Cheese Delight 20 Gr</msg>
+<status status="PASS" starttime="20240802 23:46:34.269" endtime="20240802 23:46:36.303"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${MiniCartItemList}</arg>
+<arg>${MinicartItemName}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240802 23:46:36.303" endtime="20240802 23:46:36.303"/>
+</kw>
+<status status="PASS" starttime="20240802 23:46:34.268" endtime="20240802 23:46:36.303"/>
+</iter>
+<status status="PASS" starttime="20240802 23:46:34.267" endtime="20240802 23:46:36.304"/>
+</for>
+<return>
+<value>${MiniCartItemList}</value>
+<status status="PASS" starttime="20240802 23:46:36.304" endtime="20240802 23:46:36.304"/>
+</return>
+<msg timestamp="20240802 23:46:36.304" level="INFO">@{MinicartProductNameValue} = [ Fitbar Cheese Delight 20 Gr ]</msg>
+<status status="PASS" starttime="20240802 23:46:31.219" endtime="20240802 23:46:36.304"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>&amp;{Arguments}</var>
+<arg>productName=@{productName}</arg>
+<arg>MinicartProductNameValue=@{MinicartProductNameValue}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20240802 23:46:36.306" level="INFO">&amp;{Arguments} = { productName=['Fitbar Cheese Delight 20 Gr'] | MinicartProductNameValue=['Fitbar Cheese Delight 20 Gr'] }</msg>
+<status status="PASS" starttime="20240802 23:46:36.305" endtime="20240802 23:46:36.306"/>
+</kw>
+<kw name="Validate The Similarity Of Item Added To Cart" library="add_to_cart">
+<arg>&amp;{Arguments}</arg>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Argument1}</var>
+<arg>${Argument['productName']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240802 23:46:36.307" level="INFO">${Argument1} = ['Fitbar Cheese Delight 20 Gr']</msg>
+<status status="PASS" starttime="20240802 23:46:36.306" endtime="20240802 23:46:36.308"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Argument2}</var>
+<arg>${Argument['MinicartProductNameValue']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240802 23:46:36.310" level="INFO">${Argument2} = ['Fitbar Cheese Delight 20 Gr']</msg>
+<status status="PASS" starttime="20240802 23:46:36.309" endtime="20240802 23:46:36.310"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>productName----: ${Argument1}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240802 23:46:36.311" level="INFO">productName----: ['Fitbar Cheese Delight 20 Gr']</msg>
+<status status="PASS" starttime="20240802 23:46:36.310" endtime="20240802 23:46:36.311"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>MinicartProductNameValue---: ${Argument2}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240802 23:46:36.312" level="INFO">MinicartProductNameValue---: ['Fitbar Cheese Delight 20 Gr']</msg>
+<status status="PASS" starttime="20240802 23:46:36.311" endtime="20240802 23:46:36.312"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${TotalItem}</var>
+<arg>${Argument2}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20240802 23:46:36.313" level="INFO">Length is 1</msg>
+<msg timestamp="20240802 23:46:36.313" level="INFO">${TotalItem} = 1</msg>
+<status status="PASS" starttime="20240802 23:46:36.312" endtime="20240802 23:46:36.313"/>
+</kw>
+<if>
+<branch type="IF" condition="${TotalItem} &gt; 1">
+<kw name="Sort List" library="Collections">
+<arg>${Argument1}</arg>
+<doc>Sorts the given list in place.</doc>
+<status status="NOT RUN" starttime="20240802 23:46:36.314" endtime="20240802 23:46:36.314"/>
+</kw>
+<kw name="Sort List" library="Collections">
+<arg>${Argument2}</arg>
+<doc>Sorts the given list in place.</doc>
+<status status="NOT RUN" starttime="20240802 23:46:36.315" endtime="20240802 23:46:36.315"/>
+</kw>
+<status status="NOT RUN" starttime="20240802 23:46:36.314" endtime="20240802 23:46:36.315"/>
+</branch>
+<status status="PASS" starttime="20240802 23:46:36.314" endtime="20240802 23:46:36.315"/>
+</if>
+<kw name="Lists Should Be Equal" library="Collections">
+<var>${ValidateResult}</var>
+<arg>${Argument1}</arg>
+<arg>${Argument2}</arg>
+<doc>Fails if given lists are unequal.</doc>
+<msg timestamp="20240802 23:46:36.316" level="INFO">${ValidateResult} = None</msg>
+<status status="PASS" starttime="20240802 23:46:36.315" endtime="20240802 23:46:36.316"/>
+</kw>
+<if>
+<branch type="IF" condition="'${ValidateResult}'=='False'">
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Error Item Added To Cart Not Match</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="NOT RUN" starttime="20240802 23:46:36.316" endtime="20240802 23:46:36.317"/>
+</kw>
+<status status="NOT RUN" starttime="20240802 23:46:36.316" endtime="20240802 23:46:36.317"/>
+</branch>
+<status status="PASS" starttime="20240802 23:46:36.316" endtime="20240802 23:46:36.317"/>
+</if>
+<status status="PASS" starttime="20240802 23:46:36.306" endtime="20240802 23:46:36.317"/>
+</kw>
+<kw name="View Cart Page" library="add_to_cart">
+<kw name="Wait Until Element Is Visible With Long Time" library="base">
+<arg>${SESALihatKeranjang}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Element}</arg>
+<arg>45</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240802 23:46:36.318" endtime="20240802 23:46:38.348"/>
+</kw>
+<status status="PASS" starttime="20240802 23:46:36.318" endtime="20240802 23:46:38.349"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SESALihatKeranjang}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240802 23:46:38.349" level="INFO">Clicking element '//a[@class='btn wide']'.</msg>
+<status status="PASS" starttime="20240802 23:46:38.349" endtime="20240802 23:46:41.873"/>
+</kw>
+<status status="PASS" starttime="20240802 23:46:36.317" endtime="20240802 23:46:41.875"/>
+</kw>
+<kw name="Go To Checkout Page" library="add_to_cart">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SESAProsesPesanan}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240802 23:46:41.876" endtime="20240802 23:46:43.916"/>
+</kw>
+<kw name="Scroll Down To Element" library="base">
+<arg>${SESAProsesPesanan}</arg>
+<kw name="Get Horizontal Position" library="SeleniumLibrary">
+<var>${x}</var>
+<arg>${locator}</arg>
+<doc>Returns the horizontal position of the element identified by ``locator``.</doc>
+<msg timestamp="20240802 23:46:45.944" level="INFO">${x} = 740</msg>
+<status status="PASS" starttime="20240802 23:46:43.918" endtime="20240802 23:46:45.944"/>
+</kw>
+<kw name="Get Vertical Position" library="SeleniumLibrary">
+<var>${y}</var>
+<arg>${locator}</arg>
+<doc>Returns the vertical position of the element identified by ``locator``.</doc>
+<msg timestamp="20240802 23:46:47.968" level="INFO">${y} = 569</msg>
+<status status="PASS" starttime="20240802 23:46:45.944" endtime="20240802 23:46:47.968"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(${x}, ${y}-100)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20240802 23:46:47.969" level="INFO">Executing JavaScript:
+window.scrollTo(740, 569-100)
+Without any arguments.</msg>
+<status status="PASS" starttime="20240802 23:46:47.968" endtime="20240802 23:46:48.981"/>
+</kw>
+<status status="PASS" starttime="20240802 23:46:43.916" endtime="20240802 23:46:48.982"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SESAProsesPesanan}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240802 23:46:48.982" level="INFO">Clicking element '//button[@name='checkout']'.</msg>
+<status status="PASS" starttime="20240802 23:46:48.982" endtime="20240802 23:46:55.214"/>
+</kw>
+<status status="PASS" starttime="20240802 23:46:41.875" endtime="20240802 23:46:55.216"/>
+</kw>
+<kw name="Fill Checkout Data" library="add_to_cart">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SESAEmail}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240802 23:46:55.217" endtime="20240802 23:46:57.248"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SESAEmail}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240802 23:46:57.249" level="INFO">Clicking element '//input[@id='email']'.</msg>
+<status status="PASS" starttime="20240802 23:46:57.248" endtime="20240802 23:46:59.308"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SESAEmail}</arg>
+<arg>${EmailAddress}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240802 23:46:59.309" level="INFO">Typing text 'ragilliaatmakawahyup@gmail.com' into text field '//input[@id='email']'.</msg>
+<status status="PASS" starttime="20240802 23:46:59.308" endtime="20240802 23:47:02.424"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SESANamaDepan}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240802 23:47:02.426" level="INFO">Clicking element '//input[@id='TextField0']'.</msg>
+<status status="PASS" starttime="20240802 23:47:02.425" endtime="20240802 23:47:04.591"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SESANamaDepan}</arg>
+<arg>${NamaDepan}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240802 23:47:04.592" level="INFO">Typing text 'Ragillia' into text field '//input[@id='TextField0']'.</msg>
+<status status="PASS" starttime="20240802 23:47:04.591" endtime="20240802 23:47:07.668"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SESANamaBelakang}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240802 23:47:07.669" level="INFO">Clicking element '//input[@id='TextField1']'.</msg>
+<status status="PASS" starttime="20240802 23:47:07.668" endtime="20240802 23:47:09.784"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SESANamaBelakang}</arg>
+<arg>${NamaBelakang}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240802 23:47:09.785" level="INFO">Typing text 'Atmaka' into text field '//input[@id='TextField1']'.</msg>
+<status status="PASS" starttime="20240802 23:47:09.785" endtime="20240802 23:47:12.868"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SESAAlamat}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240802 23:47:12.873" level="INFO">Clicking element '//input[@id='TextField2']'.</msg>
+<status status="PASS" starttime="20240802 23:47:12.871" endtime="20240802 23:47:14.962"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SESAAlamat}</arg>
+<arg>${Alamat}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240802 23:47:14.964" level="INFO">Typing text 'Jl. Bersama' into text field '//input[@id='TextField2']'.</msg>
+<status status="PASS" starttime="20240802 23:47:14.963" endtime="20240802 23:47:18.065"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SESAAlamat}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240802 23:47:18.066" level="INFO">Clicking element '//input[@id='TextField2']'.</msg>
+<status status="PASS" starttime="20240802 23:47:18.065" endtime="20240802 23:47:20.110"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SESAKecamatan}</arg>
+<arg>${Kecamatan}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240802 23:47:20.110" level="INFO">Typing text 'Tebet' into text field '//input[@id='TextField3']'.</msg>
+<status status="PASS" starttime="20240802 23:47:20.110" endtime="20240802 23:47:23.228"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SESAKota}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240802 23:47:23.229" level="INFO">Clicking element '//input[@id='TextField4']'.</msg>
+<status status="PASS" starttime="20240802 23:47:23.229" endtime="20240802 23:47:25.322"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SESAKota}</arg>
+<arg>${Kota}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240802 23:47:25.323" level="INFO">Typing text 'Tebet' into text field '//input[@id='TextField4']'.</msg>
+<status status="PASS" starttime="20240802 23:47:25.323" endtime="20240802 23:47:28.388"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SESAKodePos}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240802 23:47:28.389" level="INFO">Clicking element '//input[@id='TextField5']'.</msg>
+<status status="PASS" starttime="20240802 23:47:28.388" endtime="20240802 23:47:30.484"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SESAKodePos}</arg>
+<arg>${KodePos}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240802 23:47:30.485" level="INFO">Typing text '12332' into text field '//input[@id='TextField5']'.</msg>
+<status status="PASS" starttime="20240802 23:47:30.484" endtime="20240802 23:47:33.558"/>
+</kw>
+<status status="PASS" starttime="20240802 23:46:55.216" endtime="20240802 23:47:33.559"/>
+</kw>
+<status status="PASS" starttime="20240802 23:45:18.135" endtime="20240802 23:47:33.559"/>
+</test>
+<status status="PASS" starttime="20240802 23:45:17.976" endtime="20240802 23:47:33.561"/>
+</suite>
+<status status="PASS" starttime="20240802 23:45:17.972" endtime="20240802 23:47:33.563"/>
+</suite>
+<status status="PASS" starttime="20240802 23:45:17.944" endtime="20240802 23:47:33.564"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Technical Test Alfatech Omega">Technical Test Alfatech Omega</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Test">Technical Test Alfatech Omega.Test</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="00 Add To Cart">Technical Test Alfatech Omega.Test.00 Add To Cart</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
