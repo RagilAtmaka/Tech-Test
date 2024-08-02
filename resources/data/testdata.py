@@ -8,7 +8,6 @@ Alamat                  = 'Jl. Bersama'
 Kecamatan               = 'Tebet'
 Kota                    = 'Tebet'
 KodePos                 = '12332'
-
 SESASimpleProduk        = 'Fitbar Cheese Delight 20 Gr'
 
 #URL List
