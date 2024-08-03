@@ -1,4 +1,4 @@
-#sesa
+#SESAddTocart
 SESAProductItemCartName     = "//a[@class='cart-summary-item__title']"
 SESAMinicart                = "//span[@class='current-cart-icon current-cart-icon--cart']"
 SESADeleteItemMiniCart      = "//a[normalize-space()='Hapus']"
@@ -12,7 +12,26 @@ SESALihatKeranjang          = "//a[@class='btn wide']"
 SESAProdukShoppingCart      = "//div[@class='cart-item__description__title']"
 SESAProsesPesanan           = "//button[@name='checkout']"
 SESAProdukCheckout          = "//div[@class='_4QenE']//div[@aria-labelledby='ResourceList0']//div[2]//div[contains(@class,dDm6x)]//p[1]"
+SESAMiniCartLogin           = "//span[@class='toolbar-cart']"
 
+#SESARegister
+SESAAkun                    = "//a[@aria-label='Akun']"
+SESADaftar                  = "//a[normalize-space()='Pelanggan baru? Daftar akun']"
+SESADaftarNamaDepan         = "//div[@id='first_name']"
+SESADaftarNamaBelakang      = "//div[@id='last_name']"
+SESADaftarEmail             = "//div[@id='email']"
+SESADaftarPassword          = "//div[@id='password']"
+SESADaftarKirim             = "//input[@value='Kirim']"
+SESAAkunSaya                = "//div[@id='customer-account']"
+SESAKeluar                  = "//a[@class='more-link']"
+
+#SESALogin
+
+SESALoginEmail              = "//input[@id='customer_email']"
+SESALoginPassword           = "//input[@id='customer_password']"
+SESALoginMasuk              = "//input[@value='Masuk']"
+
+#SESACheckout 
 SESAEmail                   = "//input[@id='email']"
 SESAPengantaran             = "//input[@id='delivery_strategies-SHIPPING']"
 SESANamaDepan               = "//input[@id='TextField0']"
@@ -25,16 +44,3 @@ SESAKodePos                 = "//input[@id='TextField5']"
 SESANoTelp                  = "//input[@id='TextField6']"
 Loader                      = "//div[contains(@x-show, 'isLoading')]"
 
-
-EmailAddress            = 'ragilliaatmakawahyup@gmail.com'
-Password                = 'Password123'
-NamaDepan               = 'Ragillia'
-NamaBelakang            = 'Atmaka'
-NoTelp                  = '085230233331'
-Alamat                  = 'Jl. Bersama'
-Kecamatan               = 'Tebet'
-Kota                    = 'Tebet'
-KodePos                 = '12332'
-
-#URL List
-URLWEB                  = 'https://sesa.id/'

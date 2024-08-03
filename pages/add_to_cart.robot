@@ -1,11 +1,51 @@
 *** Settings ***
 Library         SeleniumLibrary
 Library         Collections
-Resource    ../base/base.robot
+Resource        ../base/base.robot
 Variables       ../resources/locators/add_to_cart_locator.py
-Variables    ../resources/data/testdata.py
+Variables        ../resources/data/testdata.py
 
 *** Keywords ***
+To Register page
+    Wait Until Element Is Visible With Long Time   ${SESAAkun}
+    Click Element    ${SESAAkun}
+    Click Element    ${SESADaftar}
+
+Fill Register Data
+    Wait Until Element Is Visible With Long Time    ${SESADaftarNamaDepan}
+    Click Element    ${SESADaftarNamaDepan}
+    Input Text    ${SESADaftarNamaDepan}    ${DaftarDepan}
+    Click Element    ${SESADaftarNamaBelakang}
+    Input Text    ${SESADaftarNamaBelakang}    ${DaftarBelakan}
+    ${randomEmail}=    Generate Random Email
+    Click Element    ${SESADaftarPassword}
+    Input Text    ${SESADaftarPassword}    ${DaftarPassword}
+    Click Element    ${SESADaftarKirim}
+
+Validate Registered 
+    Wait Until Element Is Visible With Long Time    ${SESAAkunSaya}
+
+Logout
+    Wait Until Element Is Visible    ${SESAKeluar}
+    Click Element    ${SESAKeluar}
+
+To Login Page
+    Wait Until Element Is Visible    ${SESAAkun}
+    Click Element    ${SESAAkun}
+
+Do Login
+    Wait Until Element Is Visible    ${SESALoginEmail}
+    Click Element    ${SESALoginEmail}
+    Input Text    ${SESALoginEmail}    ${LoginEmail}
+    Click Element    ${SESALoginPassword}
+    Input Text    ${SESALoginPassword}    ${LoginPassword}
+    Click Element    ${SESALoginMasuk}
+
+Generate Random Email
+    ${randomString}=    Generate Random String    8    [LOWER]
+    ${randomEmail}=    Set Variable    ${randomString}@yopmail.com
+    RETURN    ${randomEmail}
+
 Go To PDP Product By Index
     [Arguments]    ${index}
     Wait Until Element Is Visible With Long Time    ${ProductItemCardName.format(${index})}
@@ -55,7 +95,7 @@ Close The Minicart
 
 Empty the items in MiniCart
     Go To Home Page
-    Click Element    ${SESAMinicart}
+    Click Element    ${SESAMiniCartLogin}
     ${present}=    Run Keyword and Return Status    Wait Until Page Contains Element    ${SESADeleteItemMiniCart}
     WHILE    ${present}
         Click Element    ${SESADeleteItemMiniCart}
@@ -202,10 +242,25 @@ Error Item Added To Compare Not Match
     Fail
     ...    Data Nama Product yang ditambahkan dari pdp : -'${Argument1}'- tidak sesuai dengan data product di halaman Compare : -'${Argument2}'-
 
-Fill Checkout Data
+Fill Checkout Data Guest
     Wait Until Element Is Visible    ${SESAEmail}
     Click Element    ${SESAEmail}
     Input Text    ${SESAEmail}    ${EmailAddress}
+    Click Element    ${SESANamaDepan}
+    Input Text    ${SESANamaDepan}    ${NamaDepan}
+    Click Element    ${SESANamaBelakang}
+    Input Text    ${SESANamaBelakang}    ${NamaBelakang}
+    Click Element    ${SESAAlamat}
+    Input Text    ${SESAAlamat}    ${Alamat}
+    Click Element    ${SESAAlamat}
+    Input Text    ${SESAKecamatan}    ${Kecamatan}
+    Click Element    ${SESAKota}
+    Input Text    ${SESAKota}    ${Kota}
+    Click Element    ${SESAKodePos}
+    Input Text    ${SESAKodePos}    ${KodePos}
+
+Fill Checkout Data Login
+    Wait Until Element Is Visible    ${SESANamaDepan}
     Click Element    ${SESANamaDepan}
     Input Text    ${SESANamaDepan}    ${NamaDepan}
     Click Element    ${SESANamaBelakang}
