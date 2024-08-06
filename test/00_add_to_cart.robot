@@ -35,9 +35,10 @@ Guest User Add To Cart
 
 Logged In User Add To Cart
     Go To Home Page
+    Empty the items in MiniCart
     To Login Page
     Do Login
-    Empty the items in MiniCart
+    Go To Home Page
     Search Product by Keyword in Searchbox    ${SESASimpleProduk}
     Validate Search Product And Go To PDP    ${SESASimpleProduk}
     @{productName} =    Add To Cart    Qty=1

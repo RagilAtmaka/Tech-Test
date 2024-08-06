@@ -62,8 +62,8 @@ Validate Search Product And Go To PDP
     IF    not ${IsOnProductDetailPage}    Go To PDP Product By Index    1
 
 Open MiniCart
-    Wait Until Element Is Visible With Long Time    ${SESAMinicart}
-    Click Element    ${SESAMinicart}
+    Wait Until Element Is Visible With Long Time    ${SESAMiniCartLogin}
+    Click Element    ${SESAMiniCartLogin}
 
 Get Product Name From Minicart
     Wait Until Element Is Visible With Long Time    ${SESAProductItemCartName}
@@ -96,12 +96,8 @@ Close The Minicart
 Empty the items in MiniCart
     Go To Home Page
     Click Element    ${SESAMiniCartLogin}
-    ${present}=    Run Keyword and Return Status    Wait Until Page Contains Element    ${SESADeleteItemMiniCart}
-    WHILE    ${present}
-        Click Element    ${SESADeleteItemMiniCart}
-        Wait Until Element Is Not Visible    ${Loader}
-        ${present}=    Run Keyword and Return Status    Wait Until Page Contains Element    ${SESADeleteItemMiniCart}
-    END
+    Wait Until Page Contains Element    ${SESADeleteItemMiniCart}
+    Click Element    ${SESADeleteItemMiniCart}
     Close The Minicart
     Go To Home Page
 
