@@ -4,7 +4,7 @@ SESAMinicart                = "//span[@class='current-cart-icon current-cart-ico
 SESADeleteItemMiniCart      = "//a[normalize-space()='Hapus']"
 SESASearchIcon              = "//a[@aria-label='Cari']//*[name()='svg']"
 SESASearchBox               = "//input[@id='boost-pfs-search-box-0']"
-SESAPDPProductName          = "//h1[normalize-space()='Fitbar Cheese Delight 20 Gr']"
+SESAPDPProductName          = "//h1[@class='product-title product-detail__gap-sm']"
 SESASugestedProduct         = "//p[@class='boost-pfs-search-suggestion-product-title']"
 SESACloseMiniCart           = "//a[@class='cart-summary__close toggle-cart-summary']"
 SESAAddKeranjang            = "//button[@class='btn product-add mini-form']"

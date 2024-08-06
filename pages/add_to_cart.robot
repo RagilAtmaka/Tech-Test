@@ -180,7 +180,7 @@ Error Item Added To Cart Not Match
     ...    Data Nama Product yang ditambahkan ke kerangjang, tidak sesuai dengan data product dikeranjang
 
 Validate The Similarity Of Item Added To Cart
-    [Arguments]    &{Argument}
+    [Arguments]    &{Argument}                          #Mendefinisikan argumen &{Argument}, yang merupakan dictionary (kamus) berisi data yang akan digunakan dalam keyword ini.
     ${Argument1}=    Set Variable    ${Argument['productName']}
     ${Argument2}=    Set Variable    ${Argument['MinicartProductNameValue']}
     Log    productName----: ${Argument1}

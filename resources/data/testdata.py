@@ -18,7 +18,7 @@ Kecamatan               = 'Tebet'
 Kota                    = 'Tebet'
 KodePos                 = '12332'
 
-SESASimpleProduk        = 'Fitbar Cheese Delight 20 Gr'
+SESASimpleProduk        = 'Probios Green Tea 500 Ml'
 
 #URL List
 URLWEB                  = 'https://sesa.id/'

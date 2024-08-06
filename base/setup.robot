@@ -5,15 +5,16 @@ Variables   ../resources/data/testdata.py
 
 *** Variables ***
 ${BROWSER}    Chrome
-${CromeDriverPath}    ${CURDIR}/../../chromedriver/chromedriver
-${EdgeDriverPath}     ${CURDIR}/../../edgedriver/msedgedriver
+${CromeDriverPath}    ${CURDIR}/../../chromedriver/chromedriver    #Mendefinisikan variabel ${CromeDriverPath} yang berisi path ke executable ChromeDriver. ${CURDIR} adalah variabel built-in Robot Framework yang menunjuk ke direktori kerja saat ini.
+${EdgeDriverPath}     ${CURDIR}/../../edgedriver/msedgedriver      #Mendefinisikan variabel ${EdgeDriverPath} yang berisi path ke executable EdgeDriver.
+
 
 *** Keywords ***
-Start Test Case
-    ${OS}=    Evaluate    platform.system()    platform
-    Log    "running on ${OS}-${BROWSER}"
-    @{Browser_id}=    Get Browser Ids
-    Run Keyword if    @{Browser_id}==[]    Start Test
+Start Test Case    
+    ${OS}=    Evaluate    platform.system()    platform    #Mengevaluasi dan menyimpan nama sistem operasi ke dalam variabel ${OS} menggunakan library Python platform.
+    Log    "running on ${OS}-${BROWSER}"                   #Mencetak log yang menunjukkan sistem operasi dan browser yang digunakan.
+    @{Browser_id}=    Get Browser Ids                      #Mengambil ID browser yang sedang aktif dan menyimpannya dalam daftar ${Browser_id}.
+    Run Keyword if    @{Browser_id}==[]    Start Test      #Menjalankan keyword Start Test jika daftar ${Browser_id} kosong.
 
 Start Test
     ${OS}=    Evaluate    platform.system()    platform
